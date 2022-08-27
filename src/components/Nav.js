@@ -1,10 +1,12 @@
 import React from 'react';
 import '../Style.css';
+import logo from "../../src/Furever-Yours-Logo.jpg";
 
 function Nav({ currentPage, handlePageChange }) {
 
   return (
     <nav className="main-nav-menu">
+        <img src={logo} alt="Logo" className="logo" />
     <section className="main-nav-items">
     <ul>
       <li>

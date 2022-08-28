@@ -4,8 +4,9 @@ const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
 
-router.use((req, res) => {
-  return res.sendFile('Oh no, wrong route!');
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 module.exports = router;

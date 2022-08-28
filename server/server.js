@@ -18,9 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //leaving this here in case we need it, dont think so but just in case
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-// });
+
 
   
 db.once('open', () => {

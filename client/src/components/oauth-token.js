@@ -4,8 +4,8 @@ import { useEffect, createContext, useState } from "react";
 const petFinderKey = "WXh8Fm1P6GydlDOm9kP564MYwUs6ITqhBWye7MEwqcwvyU9XQy";
 const petFinderSecret = "VSBGhUAftbzFDnPwh2pRc3x41qEVKGbMM96U74Uu";
 
-const MyToken = async () => {
-    const [accessToken, setAccessToken] = useState(null);
+const MyToken = async (setAccessToken) => {
+    // const [accessToken, setAccessToken] = useState(null);
 
 
     const fetchAccessToken = async () => {
@@ -24,9 +24,9 @@ const MyToken = async () => {
     };
     await fetchAccessToken();
 
-console.log(accessToken);
+// console.log(accessToken);
 
-return accessToken
+return
 }
 
 export default MyToken;

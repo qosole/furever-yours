@@ -21,4 +21,22 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/login', async (req, res) => {
+    try {
+        //if they are logged in, redirect to root page
+        if (req.session.logged_in) {
+            res.redirect('/')
+            return;
+        }
+
+        //if the user isnt logged in then render login page
+        if (!req.session.logged_in) {
+            res.render('login')
+        }
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;

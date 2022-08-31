@@ -40,3 +40,10 @@ router.get('/login', async (req, res) => {
 });
 
 module.exports = router;
+
+
+//login requests are post requests 
+//create, update,
+//login, logout, get requests 
+
+//save pets model maybe? or save it in the user data. 

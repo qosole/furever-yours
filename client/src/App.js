@@ -1,16 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import {useEffect, createContext, useState} from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import MyToken from './components/oauth-token';
 import './Style.css';
+// import { ArgumentOutOfRangeError } from 'rxjs';
 
-// Pass users array to the List component as a prop
-export default function App() {
+export const AuthContext = createContext();
+
+function App({Component, pageProps}) {
+  const [accessToken, setAccessToken] = useState(null);
+
+useEffect(() => {
+  const fetchAccessToken = async () => {
+    const res = await fetch("/api/oauth-token");
+    const json = await res.json();
+    setAccessToken(json.access_token);
+    console.log(await res.json());
+  };
+  fetchAccessToken();
+}, []);
+
 
   return (
-    <div>
+    <AuthContext.Provider value={accessToken}>
       <Header />
       <Footer />
-    </div>
+      <Component {...pageProps} />
+    </AuthContext.Provider>
   );
 }
+
+export default App;

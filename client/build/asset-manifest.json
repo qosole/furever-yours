@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.9e3b3a0a.css",
-    "main.js": "/static/js/main.3fd56429.js",
+    "main.css": "/static/css/main.38a5f650.css",
+    "main.js": "/static/js/main.e57773af.js",
     "static/js/787.5566b55c.chunk.js": "/static/js/787.5566b55c.chunk.js",
     "static/media/Furever-Yours-Logo.jpg": "/static/media/Furever-Yours-Logo.23634bdd26e69cb4fa88.jpg",
     "index.html": "/index.html",
-    "main.9e3b3a0a.css.map": "/static/css/main.9e3b3a0a.css.map",
-    "main.3fd56429.js.map": "/static/js/main.3fd56429.js.map",
+    "main.38a5f650.css.map": "/static/css/main.38a5f650.css.map",
+    "main.e57773af.js.map": "/static/js/main.e57773af.js.map",
     "787.5566b55c.chunk.js.map": "/static/js/787.5566b55c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e3b3a0a.css",
-    "static/js/main.3fd56429.js"
+    "static/css/main.38a5f650.css",
+    "static/js/main.e57773af.js"
   ]
 }

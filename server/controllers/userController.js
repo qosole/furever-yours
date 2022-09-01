@@ -4,8 +4,12 @@ const User = require('../models/User');
 module.exports = {
     // gets all of the user
     getUsers(req, res){
+        console.log('hitting function')
         User.find()
-            .then((users) => res.json(users))
+            .then((users) => {
+                console.log("data: ", users)
+                res.json(users)
+            })
             .catch((err) => {
                 console.log(err);
                 res.status(500).json(err)

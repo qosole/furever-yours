@@ -1,6 +1,5 @@
-// 
+// required needed dependecies 
 const express = require("express");
-// const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 
 // const { typeDefs, resolvers } = require("./schemas");
@@ -21,9 +20,9 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(require('./routes'));
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 
   db.once("open", () => {

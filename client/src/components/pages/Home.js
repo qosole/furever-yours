@@ -20,6 +20,10 @@ export default function Home() {
               type="text"
               placeholder="search for a pet"
             />
+            <input
+              type="number"
+              placeholder="zipcode"
+            />
              <span className="searchbtn">
              <FontAwesomeIcon icon={ faMagnifyingGlass } size= '2x'/>
              </span>
@@ -39,6 +43,7 @@ export default function Home() {
     </div>
   );
 }
+
 // import {useEffect, useState} from 'react';
 // import axios from 'axios';
 // import { Hint } from 'react-autocomplete-hint';
@@ -103,4 +108,3 @@ export default function Home() {
 //   </section>
 //   );
 // }
-

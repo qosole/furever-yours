@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Nav from './Nav';
 import Home from './pages/Home';
 import Account from './pages/Account';
+import Signup from './pages/Signup';
 import Login from './pages/login2';
 import '../Style.css';
 
@@ -18,6 +19,9 @@ export default function PortfolioContainer() {
     }
     if (currentPage === 'Login') {
       return <Login />;
+    }
+    if (currentPage === 'Signup') {
+      return <Signup />;
     }
     return <Home />;
   };

@@ -17,9 +17,9 @@ export default function Home() {
               type="text"
               placeholder="search for a pet"
             />
-             <button className="searchbtn" style={{ margin: '5px' }}>
+             <span className="searchbtn">
              <FontAwesomeIcon icon={ faMagnifyingGlass } size= '2x'/>
-             </button>
+             </span>
           </div>
         </form>
       </div>

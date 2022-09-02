@@ -3,17 +3,18 @@ import axios from "axios";
 import useFetch from './fetchRequest';
 import '../Style.css';
 
-function CommitSearch() {
+function CommitSearch({pet, city}) {
     const { data, loading, error } = useFetch("https://api.adoptapet.me/ap");
 
     if (loading) return <h1> LOADING...</h1>;
 
     if (error) console.log(error);
 
-    var cityInput = "Montreal";
+    var cityInput = city;
+    var petInput = pet;
 
     let newData = data?.page.filter((animal) => {
-        if (animal.center.city === cityInput) {
+        if (animal.center.city === cityInput && animal.species_breed.species_name.includes(petInput) ) {
         return true
         } else {
             return false

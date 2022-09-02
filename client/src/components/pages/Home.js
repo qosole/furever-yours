@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../Style.css';
-
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,6 +9,7 @@ import SearchBar from '../SearchBar';
 
 export default function Home() {
 
+
   return (
     <div>
       <h1>Home</h1>
@@ -16,17 +17,7 @@ export default function Home() {
       <div className="searchform">
         <form id="form" className="form" >
           <div className="field">
-            <input
-              type="text"
-              placeholder="search for a pet"
-            />
-            <input
-              type="number"
-              placeholder="zipcode"
-            />
-             <button className="searchbtn">
-             <FontAwesomeIcon icon={ faMagnifyingGlass } size= '2x'/>
-             </button>
+            
           </div>
         </form>
       </div>

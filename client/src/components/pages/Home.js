@@ -24,9 +24,9 @@ export default function Home() {
               type="number"
               placeholder="zipcode"
             />
-             <span className="searchbtn">
+             <button className="searchbtn">
              <FontAwesomeIcon icon={ faMagnifyingGlass } size= '2x'/>
-             </span>
+             </button>
           </div>
         </form>
       </div>

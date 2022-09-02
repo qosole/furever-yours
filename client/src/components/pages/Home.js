@@ -20,6 +20,10 @@ export default function Home() {
               type="text"
               placeholder="search for a pet"
             />
+            <input
+              type="number"
+              placeholder="zipcode"
+            />
              <span className="searchbtn">
              <FontAwesomeIcon icon={ faMagnifyingGlass } size= '2x'/>
              </span>

@@ -43,6 +43,7 @@ export default function Home() {
     </div>
   );
 }
+
 // import {useEffect, useState} from 'react';
 // import axios from 'axios';
 // import { Hint } from 'react-autocomplete-hint';
@@ -107,4 +108,3 @@ export default function Home() {
 //   </section>
 //   );
 // }
-

@@ -1,7 +1,10 @@
 import React from 'react';
 import '../../Style.css';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+
+import SearchBar from '../SearchBar';
 
 
 export default function Home() {
@@ -32,6 +35,7 @@ export default function Home() {
         imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
         in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
       </p>
+      <SearchBar />
     </div>
   );
 }

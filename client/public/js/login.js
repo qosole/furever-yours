@@ -27,3 +27,7 @@ const loginFormHandler = async (event) => {
 document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
+
+
+    //use JWT token which will be in FE
+    //when the route is successful, give them the token 

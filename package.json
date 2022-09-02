@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/qosole/furever-yours/issues"
   },
-  "homepage": "https://github.com/qosole/furever-yours#readme"
+  "homepage": "https://github.com/qosole/furever-yours#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
 }

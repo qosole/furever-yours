@@ -2,6 +2,38 @@
 const { Schema, model, Types } = require('mongoose');
 const bcrypt = require('bcrypt')
 
+const petsSchema = new Schema(
+    {
+        petId: {
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(), 
+        },
+        pros: {
+            type: String,
+            required: true, 
+            max: 300,
+        },
+        cons: {
+            type: String,
+            required: true, 
+            max: 300,
+        },
+        addedAt: {
+            type: Date,
+            default: Date.now,
+            get: (timestamp) => new Date(timestamp).toLocaleString()
+        },
+    },
+    {
+        toJSON: {
+            getters: true,
+            virtuals: true,
+        },
+        id: false
+    }
+);
+
+
 const userSchema = new Schema(
     {
         username: {
@@ -14,6 +46,7 @@ const userSchema = new Schema(
             type: String,
             unique: true,
             required: true,
+            // email regex validator
             validate: {
                 validator: function (email) {
                     return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email);
@@ -21,6 +54,9 @@ const userSchema = new Schema(
                 message: `Please enter a valid email address`
             }
         },
+
+        pets: [petsSchema],
+
         password: {
             type: String,
             required: true,
@@ -32,6 +68,7 @@ const userSchema = new Schema(
             type: String,
             required: true
         }
+
     },
     {
         toJSON: {

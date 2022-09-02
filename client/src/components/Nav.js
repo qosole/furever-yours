@@ -36,6 +36,15 @@ function Nav({ currentPage, handlePageChange }) {
           Login / Logout
         </a>
       </li>
+      <li>
+        <a
+          href="#signup"
+          onClick={() => handlePageChange('Signup')}
+          className={currentPage === 'Signup' ? 'nav-link active' : 'nav-link'}
+        >
+          Sign up
+        </a>
+      </li>
     </ul>
 </section>
 </nav>

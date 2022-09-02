@@ -123,3 +123,29 @@ input {
   height: 60px;
 }
 
+/* Animal Search Results and Animal Card Stylings */
+
+.animalSearchResults {
+  display: flex;
+  width: 100vw;
+  min-height: min-content;
+  background-color: aqua;
+}
+
+.animalCard {
+  width: 25%;
+  padding: 20px;
+  margin: 10px;
+  box-sizing: border-box;
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+
+.animalImage {
+  border-radius: 10px;
+  border-right: 3px solid grey;
+  border-bottom: 2px solid rgb(99, 99, 99);
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Nav from './Nav';
 import Home from './pages/Home';
 import Account from './pages/Account';
-import Login from './pages/Login';
+import Login from './pages/login2';
 import '../Style.css';
 
 

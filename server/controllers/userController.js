@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const { signToken } = require('../utils/auth')
 
 
 module.exports = {
@@ -69,22 +70,45 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
 
-    register(req, res) {
+    async register(req, res) {
         // console.log(res.body)
-        const existingUser = User.findOne({ email: req.body.email })
-        console.log(existingUser)
-        if (existingUser)
-            res.status(204).json({ message: "User with this email already exists" })
-        User.create(req.body)
-            .then((newuser) => {
-                console.log(newuser)
-                res.status(200).json({ message: `${newuser} has been created` })
-            })
-            .catch((err) => res.status(500).json(err))
+        const existingUser = await User.findOne({ email: req.body.email }).exec()
+
+        if (existingUser) {
+            return res.status(204).json({ message: "User with this email already exists" })
+        }
+
+        try {
+            const newUser = await User.create(req.body)
+            console.log(newuser)
+            res.status(200).json({ message: `${newuser} has been created` })
+        } catch (error) {
+            res.status(500).json(error)
+        }
+
+
+        // User.create(req.body)
+        //     .then((newuser) => {
+        //         console.log(newuser)
+        //     })
+        //     .catch((err) => res.status(500).json(err))
     },
 
-    login(req, res) {
-        console.log(req, res)
-        
+    async login(req, res) {
+        const userExists = await User.findOne({ email: req.body.email }).exec()
+    
+        const correctPassword = await userExists.isCorrectPassword(req.body.password)
+        if (correctPassword) {
+            const token = signToken(userExists);
+
+            return res.status(200).json({
+                message: "Password works",
+                token,
+                user: userExists
+            })
+
+        }
+
+
     }
 };

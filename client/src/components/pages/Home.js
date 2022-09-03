@@ -12,6 +12,9 @@ export default function Home() {
   const [pet, setPet] = useState('');
   const [city, setCity] = useState('');
   const [search, setSearch] = useState({pet:"", city:""});
+  // const [dog, setDog] = useState('Dog');
+  // const [cat, setCat] = useState('Cat');
+
 
 
   return (
@@ -21,18 +24,27 @@ export default function Home() {
       <div className="searchform">
         <form id="form" className="form" >
           <div className="field">
-            <input
+            {/* <input
               type="text"
               placeholder="search for a pet"
               value= {pet}
               onChange={event=>setPet(event.target.value)}
-            />
+            /> */}
             <input
               type="text"
               placeholder="city"
               value= {city}
               onChange={event=>setCity(event.target.value)}
             />
+          
+            <select
+            value={pet}
+            onChange={event=>setPet(event.target.value)}
+            > 
+                  <option value="Cat"> Cat</option>
+                  <option value="Dog">Dog</option>
+            </select>
+          
              <button className="searchbtn"
              onClick={event=>{
               event.preventDefault()

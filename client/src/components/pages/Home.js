@@ -12,10 +12,7 @@ export default function Home() {
   const [pet, setPet] = useState('');
   const [city, setCity] = useState('');
   const [search, setSearch] = useState({pet:"", city:""});
-  // const [dog, setDog] = useState('Dog');
-  // const [cat, setCat] = useState('Cat');
-
-
+ 
 
   return (
     <div>
@@ -38,6 +35,7 @@ export default function Home() {
             />
           
             <select
+            className="dropdown"
             value={pet}
             onChange={event=>setPet(event.target.value)}
             > 
@@ -57,14 +55,6 @@ export default function Home() {
         </form>
       </div>
 
-      <p>
-        Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-        Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-        mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-        lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-        imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-        in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
-      </p>
       <SearchBar pet={search.pet} city={search.city}/>
     </div>
   );

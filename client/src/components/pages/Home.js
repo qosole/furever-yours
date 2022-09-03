@@ -12,7 +12,7 @@ export default function Home() {
   const [pet, setPet] = useState('');
   const [city, setCity] = useState('');
   const [search, setSearch] = useState({pet:"", city:""});
-
+ 
 
   return (
     <div>
@@ -21,18 +21,28 @@ export default function Home() {
       <div className="searchform">
         <form id="form" className="form" >
           <div className="field">
-            <input
+            {/* <input
               type="text"
               placeholder="search for a pet"
               value= {pet}
               onChange={event=>setPet(event.target.value)}
-            />
+            /> */}
             <input
               type="text"
               placeholder="city"
               value= {city}
               onChange={event=>setCity(event.target.value)}
             />
+          
+            <select
+            className="dropdown"
+            value={pet}
+            onChange={event=>setPet(event.target.value)}
+            > 
+                  <option value="Cat"> Cat</option>
+                  <option value="Dog">Dog</option>
+            </select>
+          
              <button className="searchbtn"
              onClick={event=>{
               event.preventDefault()
@@ -45,14 +55,6 @@ export default function Home() {
         </form>
       </div>
 
-      <p>
-        Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-        Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-        mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-        lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-        imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-        in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
-      </p>
       <SearchBar pet={search.pet} city={search.city}/>
     </div>
   );

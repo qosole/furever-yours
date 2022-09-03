@@ -9,6 +9,10 @@ import SearchBar from '../SearchBar';
 
 export default function Home() {
 
+  const [pet, setPet] = useState('');
+  const [city, setCity] = useState('');
+  const [search, setSearch] = useState({pet:"", city:""});
+
 
   return (
     <div>
@@ -17,7 +21,26 @@ export default function Home() {
       <div className="searchform">
         <form id="form" className="form" >
           <div className="field">
-            
+            <input
+              type="text"
+              placeholder="search for a pet"
+              value= {pet}
+              onChange={event=>setPet(event.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="city"
+              value= {city}
+              onChange={event=>setCity(event.target.value)}
+            />
+             <button className="searchbtn"
+             onClick={event=>{
+              event.preventDefault()
+              setSearch({pet, city})
+            }}
+             > 
+             <FontAwesomeIcon icon={ faMagnifyingGlass } size= '2x'/>
+             </button>
           </div>
         </form>
       </div>
@@ -30,7 +53,7 @@ export default function Home() {
         imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
         in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
       </p>
-      <SearchBar />
+      <SearchBar pet={search.pet} city={search.city}/>
     </div>
   );
 }

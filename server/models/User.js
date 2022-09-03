@@ -8,6 +8,37 @@ const petsSchema = new Schema(
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId(), 
         },
+        apiId:{
+            type:Number,
+            required:true
+        },
+        species:{
+            type:String
+        },
+        breed: {
+            type:String
+        },
+        name: {
+            type:String
+        },
+        age: {
+            type:String
+        },
+        sex: {
+            type:String
+        },
+        color: {
+            type:String
+        },
+        location: {
+            type:String
+        },
+        city: {
+            type:String
+        },
+        state: {
+            type:String
+        },
         pros: {
             type: String,
             required: true, 

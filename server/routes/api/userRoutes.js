@@ -8,7 +8,8 @@ const {
     updateUser,
     deleteUser, 
     register, 
-    login
+    login,
+ 
     
 } = require('../../controllers/userController');
 
@@ -23,6 +24,10 @@ router
 .get(getSingleUser)
 .put(updateUser)
 .delete(deleteUser)
+
+// router
+// .route('/pets/:userid')
+// .put(addPet)
 
 
 module.exports = router;

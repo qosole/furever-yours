@@ -1,9 +1,9 @@
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import useFetch from './fetchRequest';
 import '../Style.css';
 
-function CommitSearch({pet, city}) {
+function CommitSearch({ pet, city }) {
     const { data, loading, error } = useFetch("https://api.adoptapet.me/ap");
 
     if (loading) return <h1> LOADING...</h1>;
@@ -14,8 +14,8 @@ function CommitSearch({pet, city}) {
     var petInput = pet;
 
     let newData = data?.page.filter((animal) => {
-        if (animal.center.city === cityInput && animal.species_breed.species_name.includes(petInput) ) {
-        return true
+        if (animal.center.city === cityInput && animal.species_breed.species_name.includes(petInput)) {
+            return true
         } else {
             return false
         }
@@ -25,24 +25,25 @@ function CommitSearch({pet, city}) {
 
     return (
 
-<div className="animalSearchResults">
-{newData?.map(animal =>{
-return (<div className="animalCard">
-<img className="animalImage" src={animal.pic_url} />
-<p>Species: {animal.species_breed.species_name}</p>
-<p>Breed: {animal.species_breed.breed_name}</p>
-<p>Name: {animal.name}</p>
-<p>Age: {animal.age}</p>
-<p>Sex: {animal.sex}</p>
-<p>Color: {animal.color}</p>
-<p>Location: {animal.center.name}</p>
-<p>City: {animal.center.city}</p>
-<p>State: {animal.center.state}</p>
-</div>)})
+        <div className="animalSearchResults">
+            {newData?.map(animal => {
+                return (<div className="animalCard">
+                    <img className="animalImage" src={animal.pic_url} />
+                    <p>Species: {animal.species_breed.species_name}</p>
+                    <p>Breed: {animal.species_breed.breed_name}</p>
+                    <p>Name: {animal.name}</p>
+                    <p>Age: {animal.age}</p>
+                    <p>Sex: {animal.sex}</p>
+                    <p>Color: {animal.color}</p>
+                    <p>Location: {animal.center.name}</p>
+                    <p>City: {animal.center.city}</p>
+                    <p>State: {animal.center.state}</p>
+                </div>)
+            })
 
-}
+            }
 
-</div>
+        </div>
 
         // <div className="animalSearchResults">
         //     {/* {console.log(data)} */}

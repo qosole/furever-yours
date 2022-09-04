@@ -155,3 +155,27 @@ input {
   margin-left: 5%;
   margin-right: 5%;
 }
+
+@media screen and (max-width: 1200px) {
+  ul li {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  ul li {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  ul li {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  ul li {
+    font-size: 18px;
+  }
+}

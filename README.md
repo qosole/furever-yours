@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Furever Yours
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project, which we named Furever Yours, is part of the Project 3 assignment for U.C. Berkeley Extension's Coding Boot Camp. Our names are Eric Rothmuller, Alejandra Izquierdo, Priya Rizal, Daniel Stefani, and William Wei and we are all students of the Boot Camp. In this project we were tasked with creating an interactive MERN Stack Application that met certain criteria. We decided to make an application that utilizes Adopt-A-Pet's API which allows you to search for adoptable pets within their database.
 
-## Available Scripts
+## Getting Started and Installing Guide
 
-In the project directory, you can run:
+If you want to use this project and add to it, these instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### `npm start`
+1. Go to the user [qosole's repository titled furever-yours](https://github.com/qosole/furever-yours)
+2. Click the Green button "Code" and select "Download Zip" which will download "furever-yours-main.zip" and then unzip the file to the directory you want to work in.
+3. Create your own Github repository for your work.
+4. Clone your new repository down to where you want to work on it.
+5. Copy and paste the contents of the "furever-yours" zip file to your new directory - the one linked to the repository you made.
+6. Install dependencies with: npm install
+7. Add the new files within git with: git add .
+8. Commit the files within git with: git commit -m "add your comment here"
+9. Push your files to your repository on GitHub with: git push origin main
+10. Begin your work.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+What things you need to install the software and how to install them.
 
-### `npm test`
+- [Git](https://git-scm.com/downloads)
+- [GitHub](https://github.com/)
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [Node](https://nodejs.org/en/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
 
-### `npm run build`
+- [Git](https://git-scm.com/downloads)
+- [GitHub](https://github.com/)
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Node](https://nodejs.org/en/)
+- [Express] (https://www.npmjs.com/package/express)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
+- [MongoDB](https://www.mongodb.com/)
+- [Mongoose](https://www.npmjs.com/package/mongoose)
+- [React](https://reactjs.org/docs/create-a-new-react-app.html)
+- [Adopt-A-Pet.com API](https://www.adoptapet.com/public/apis/pet_list.html)
+- [Paint.net](https://www.getpaint.net/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Seeing My Changes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To see the changes made by u in this project and to revert back to any part of the project, please view the commit log. Each commit log entry details every change that was made to the code and files.
 
-### `npm run eject`
+- [View Commit Log](https://github.com/qosole/furever-yours/commits/main)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Authors
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Eric Rothmuller
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Github Profile](https://github.com/ericrothmuller)
+- [LinkedIn Profile](https://www.linkedin.com/in/eric-rothmuller/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Alejandra Izquierdo
 
-## Learn More
+- [Github Profile](hhttps://github.com/alenambo02)
+- [LinkedIn Profile](https://www.linkedin.com/in/alejandra-n-izquierdo-b8488516b/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Priya Rizal
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Github Profile](https://github.com/priyarizal)
+- [LinkedIn Profile](https://www.linkedin.com/in/priya-r-822271110/)
 
-### Code Splitting
+Daniel Stefani
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Github Profile](https://github.com/DStefani86)
+- [LinkedIn Profile](https://www.linkedin.com/in/danielstefani/)
 
-### Analyzing the Bundle Size
+William Wei
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Github Profile](https://github.com/qosole)
+- [LinkedIn Profile](https://www.linkedin.com/in/william-wei-044b35241/)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### License
 
-### Advanced Configuration
+This project is licensed under the MIT License.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Acknowledgments
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+A special thank you and ackowledgement goes out to [U.C. Berkeley's Extension Coding Boot Camp](https://bootcamp.berkeley.edu/coding/) for not only giving us this challenge, but also for teaching us the skills necessary to create it.

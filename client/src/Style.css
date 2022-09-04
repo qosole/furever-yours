@@ -169,13 +169,58 @@ input {
 }
 
 @media screen and (max-width: 768px) {
+  .main-nav-menu {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 0px;
+  }
+
+  .logo {
+    height: 100px;
+    box-sizing: none;
+    padding-right: 0px;
+    padding-left: 40px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
   ul li {
-    font-size: 18px;
+    font-size: 24px;
+    display: block;
+    padding: 5px;
   }
 }
 
 @media screen and (max-width: 600px) {
+
+  .main-nav-menu {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 0px;
+  }
+
+  .logo {
+    height: 100px;
+    box-sizing: none;
+    padding-right: 0px;
+    padding-left: 40px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
   ul li {
-    font-size: 18px;
+    font-size: 20px;
+    display: block;
+    padding: 5px;
   }
 }

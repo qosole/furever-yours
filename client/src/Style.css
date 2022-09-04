@@ -160,6 +160,10 @@ input {
   ul li {
     font-size: 32px;
   }
+
+  .animalCard {
+    width: 46vw;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -194,6 +198,15 @@ input {
     display: block;
     padding: 5px;
   }
+
+  .animalSearchResults {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .animalCard {
+    width: 96vw;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -222,5 +235,14 @@ input {
     font-size: 20px;
     display: block;
     padding: 5px;
+  }
+
+  .animalSearchResults {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .animalCard {
+    width: 96vw;
   }
 }

@@ -95,7 +95,17 @@ ul li a:hover {
 .searchform {
   display:flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
 
 .input-group {
   width: 300px;
@@ -103,6 +113,23 @@ ul li a:hover {
 
 #search {
   border: 1px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputSearch {
+  font-size: 22px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.dropdown {
+  font-size: 22px;
+  width: 100px;
 }
 
 .searchbtn {

@@ -17,7 +17,7 @@ p {
 .main-nav-menu {
   display: flex;
   height: 15vh;
-  width: 100vw;
+  width: 100%;
   background-color: whitesmoke;
   justify-content: right;
   align-items: center;
@@ -50,7 +50,7 @@ footer {
   display: flex;
   background-color: whitesmoke;
   height: 5vh;
-  width: 100vw;
+  width: 100%;
   margin: 0px;
   padding: 0px;
   justify-content: center;
@@ -95,7 +95,17 @@ ul li a:hover {
 .searchform {
   display:flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
 
 .input-group {
   width: 300px;
@@ -105,12 +115,42 @@ ul li a:hover {
   border: 1px;
 }
 
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputSearch {
+  padding-left: 10px;
+  font-size: 22px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid grey;
+  height: 62px;
+  width: 500px;
+}
+
+.dropdown {
+  font-size: 22px;
+  border: 1px solid grey;
+  height: 66px;
+  width: 100px;
+}
+
 .searchbtn {
-  cursor:pointer;
-  border-radius: 0 30px 30px 0; 
-  background-color:rgb(41, 67, 92);
+  cursor: pointer;
+  border-radius: 0 30px 30px 0;
+  border: 1px solid grey;
+  background-color:rgb(80, 111, 140);
   color:rgb(10, 10, 11);
   height: 66px;
+  width: 75px;
+}
+
+
+.searchbtn:hover {
+  opacity: .8;
 }
 
 .text-center {
@@ -154,4 +194,111 @@ input {
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
+}
+
+@media screen and (max-width: 1200px) {
+  ul li {
+    font-size: 32px;
+  }
+
+  .animalCard {
+    width: 46vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  ul li {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-nav-menu {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 0px;
+  }
+
+  .logo {
+    height: 100px;
+    box-sizing: none;
+    padding-right: 0px;
+    padding-left: 40px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  ul li {
+    font-size: 24px;
+    display: block;
+    padding: 5px;
+  }
+
+  .animalSearchResults {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .animalCard {
+    width: 96vw;
+  }
+
+  .inputSearch {
+    width: 400px;
+  }
+  
+  .dropdown {
+    width: 75px;
+  }
+  
+  .searchbtn {
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .main-nav-menu {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 0px;
+  }
+
+  .logo {
+    height: 100px;
+    box-sizing: none;
+    padding-right: 0px;
+    padding-left: 40px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  ul li {
+    font-size: 20px;
+    display: block;
+    padding: 5px;
+  }
+
+  .animalSearchResults {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .animalCard {
+    width: 96vw;
+  }
+
+  .inputSearch {
+    width: 300px;
+  }
 }

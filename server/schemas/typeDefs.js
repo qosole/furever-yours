@@ -27,6 +27,11 @@ const typeDefs = gql`
         addedAt: Date
     }
 
+    type Query {
+        Users: [User]!
+        User(userId: ID!): User
+    }
+
 `;
 
 module.exports = typeDefs

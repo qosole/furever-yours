@@ -196,14 +196,66 @@ input {
   margin-right: 5%;
 }
 
+.container {
+  width: auto;
+  padding: 20px;
+  margin: .5%;
+  box-sizing: border-box;
+  background-color: aliceblue;
+  border-radius: 10px;
+  border-right: 3px solid grey;
+  border-bottom: 2px solid rgb(99, 99, 99);
+  padding: 20px;
+  
+  
+}
+
+.emailinput {
+  padding: 20px;
+}
+
+.passwordinput {
+  padding: 20px;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  border-radius: 30px;
+}
+
+
+#emailbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+#passwordbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+#loginbtn {
+  display: flex;
+  justify-content: space-around;
+}
+
+#loginbtn button {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
 @media screen and (max-width: 1200px) {
   ul li {
     font-size: 32px;
   }
 
   .animalCard {
-    width: 46vw;
-  }
+    width: 46vw; 
+   }
 }
 
 @media screen and (max-width: 992px) {

@@ -49,7 +49,7 @@ export default function Signup() {
 
   return (
     <div>
-      <p>Hello {userName}</p>
+      <p>Sign Up</p>
       <form className="form">
         <input
           value={email}

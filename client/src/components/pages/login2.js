@@ -16,9 +16,15 @@ function Login(props) {
         headers: { "content-type": "application/json" }
       })
       const data = await response.json()
+
+      localStorage.setItem("token", data.token)
+      localStorage.setItem("expiration", data.expiration);
+
+      window.location.reload();
+
       console.log(data)
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     }
   };
 
@@ -35,7 +41,7 @@ function Login(props) {
 
       <h2>Login</h2>
       <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
+        <div id="emailbox" className="flex-row space-between my-2">
           <label htmlFor="email">Email address:</label>
           <input
             placeholder="youremail@test.com"
@@ -45,7 +51,8 @@ function Login(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <br></br>
+        <div id="passwordbox" className="flex-row space-between my-2">
           <label htmlFor="pwd">Password:</label>
           <input
             placeholder="******"
@@ -60,8 +67,9 @@ function Login(props) {
             <p className="error-text">The provided credentials are incorrect</p>
           </div>
         ) : null} */}
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+        <br></br>
+        <div id="loginbtn" className="flex-row flex-end">
+          <button type="submit">Login</button>
         </div>
       </form>
     </div>

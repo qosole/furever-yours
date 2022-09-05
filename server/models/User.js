@@ -1,52 +1,52 @@
 //requires mongoose for user model/schema
 const { Schema, model, Types } = require('mongoose');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs');
 
 const petsSchema = new Schema(
     {
         petId: {
             type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId(), 
+            default: () => new Types.ObjectId(),
         },
-        apiId:{
-            type:Number,
-            required:true
+        apiId: {
+            type: Number,
+            required: true
         },
-        species:{
-            type:String
+        species: {
+            type: String
         },
         breed: {
-            type:String
+            type: String
         },
         name: {
-            type:String
+            type: String
         },
         age: {
-            type:String
+            type: String
         },
         sex: {
-            type:String
+            type: String
         },
         color: {
-            type:String
+            type: String
         },
         location: {
-            type:String
+            type: String
         },
         city: {
-            type:String
+            type: String
         },
         state: {
-            type:String
+            type: String
         },
         pros: {
             type: String,
-            required: true, 
+            required: true,
             max: 300,
         },
         cons: {
             type: String,
-            required: true, 
+            required: true,
             max: 300,
         },
         addedAt: {

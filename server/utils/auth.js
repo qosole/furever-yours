@@ -3,14 +3,7 @@ const jwt = require('jsonwebtoken');
 const secret = 'mysecretssshhhhhhh';
 const expiration = '2h';
 
-class AuthService {
 
-  loggedIn() {
-    // Checks if there is a saved token and it's still valid
-    const token = this.getToken();
-    return !!token && !this.isTokenExpired(token);
-  }
-};
 
 module.exports = {
   authMiddleware: function ({ req }) {
@@ -38,6 +31,11 @@ module.exports = {
   signToken: function ({ email, username, _id }) {
     const payload = { email, username, _id };
 
-    return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+    const token = jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+
+    return {
+      token,
+      expiration
+    };
   },
 };

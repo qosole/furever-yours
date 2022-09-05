@@ -89,11 +89,11 @@ ul li a:hover {
 /* SEARCH BAR CSS */
 
 #content {
-  padding: 25% 25% 5%;  
+  padding: 25% 25% 5%;
 }
 
 .searchform {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -142,8 +142,8 @@ ul li a:hover {
   cursor: pointer;
   border-radius: 0 30px 30px 0;
   border: 1px solid grey;
-  background-color:rgb(80, 111, 140);
-  color:rgb(10, 10, 11);
+  background-color: rgb(80, 111, 140);
+  color: rgb(10, 10, 11);
   height: 66px;
   width: 75px;
 }
@@ -251,11 +251,11 @@ input {
   .inputSearch {
     width: 400px;
   }
-  
+
   .dropdown {
     width: 75px;
   }
-  
+
   .searchbtn {
     width: 60px;
   }
@@ -301,4 +301,6 @@ input {
   .inputSearch {
     width: 300px;
   }
+
+
 }

@@ -96,19 +96,18 @@ module.exports = {
 
     async login(req, res) {
         const userExists = await User.findOne({ email: req.body.email }).exec()
-    
+
         const correctPassword = await userExists.isCorrectPassword(req.body.password)
+        
         if (correctPassword) {
-            const token = signToken(userExists);
+            const { token, expiration } = signToken(userExists);
 
             return res.status(200).json({
                 message: "Password works",
                 token,
-                user: userExists
+                user: userExists,
+                expiration
             })
-
         }
-
-
     },
 };

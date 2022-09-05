@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/qosole/furever-yours#readme",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "axios": "^0.27.2"
   }
 }

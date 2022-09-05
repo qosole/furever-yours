@@ -21,7 +21,7 @@ export default function Home() {
 
   }
 
-  if (auth.loggedIn()) {
+  // if (auth.loggedIn()) {
     return (
       <div>
         <h1>Home</h1>
@@ -67,8 +67,8 @@ export default function Home() {
         <SearchBar pet={search.pet} city={search.city} />
       </div>
     )
-  }
-  else {
-    return <Login />
-  }
+  // }
+  // else {
+  //   return <Login />
+  // }
 }

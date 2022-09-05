@@ -3,6 +3,7 @@ import '../../Style.css';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import 'animate.css';
 
 import AuthService from "../../utils/auth";
 import SearchBar from '../SearchBar';

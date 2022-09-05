@@ -14,7 +14,7 @@ function CommitSearch({ pet, city }) {
     var petInput = pet;
 
     let newData = data?.page.filter((animal) => {
-        if (animal.center.city === cityInput && animal.species_breed.species_name.includes(petInput)) {
+        if (animal.center.city.toLowerCase() === cityInput && animal.species_breed.species_name.includes(petInput)) {
             return true
         } else {
             return false

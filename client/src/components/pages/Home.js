@@ -9,19 +9,25 @@ import SearchBar from '../SearchBar';
 import Login from './login2';
 
 
+import { Hint } from 'react-autocomplete-hint';
+
+
+
 export default function Home() {
 
   const [pet, setPet] = useState('');
   const [city, setCity] = useState('');
   const [search, setSearch] = useState({ pet: "", city: "" });
 
+  const options = ["toms river", "new market", "montreal", "visalia", "st. louis", "new castle de"];
+
   const auth = new AuthService();
 
-  const handleFormSubmit = () => {
+  // const handleFormSubmit = () => {
 
-  }
+  // }
 
-  if (auth.loggedIn()) {
+  // if (auth.loggedIn()) {
     return (
       <div>
         <h1>Home</h1>
@@ -35,13 +41,16 @@ export default function Home() {
               value= {pet}
               onChange={event=>setPet(event.target.value)}
             /> */}
+              <Hint options={options}>
               <input
                 className="inputSearch"
+                data-list="montreal"
                 type="text"
                 placeholder="Enter a City"
                 value={city}
-                onChange={event => setCity(event.target.value)}
+                onChange={event => setCity(event.target.value.toLowerCase())}
               />
+              </Hint>
 
               <select
                 className="dropdown"
@@ -67,8 +76,10 @@ export default function Home() {
         <SearchBar pet={search.pet} city={search.city} />
       </div>
     )
-  }
-  else {
-    return <Login />
-  }
 }
+//   else {
+//     return <Login />
+//   }
+// }
+
+

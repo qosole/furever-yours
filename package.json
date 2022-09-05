@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/qosole/furever-yours#readme",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "http-proxy-middleware": "^2.0.6"
   }
 }

@@ -1,6 +1,25 @@
 # Furever Yours
 
+![alt text](./client/src/Furever-Yours-Logo.jpg)
+
+#Table of Content
+  - [Description](#Description)
+  - [Application Preview](#Application-Preview)
+  - [Getting Started and Installing Guide](#Getting-Started-and-Installing-Guide)
+  - [Prerequisites](#Prerequisites)
+  - [Built With](#Built-With)
+  - [Seeing My Changes](#Seeing-My-Changes)
+  - [Authors](#Authors)
+  - [license](#License)
+  - [Acknowledgments](#Acknowledgments)
+
+## Description
 This project, which we named Furever Yours, is part of the Project 3 assignment for U.C. Berkeley Extension's Coding Boot Camp. Our names are Eric Rothmuller, Alejandra Izquierdo, Priya Rizal, Daniel Stefani, and William Wei and we are all students of the Boot Camp. In this project we were tasked with creating an interactive MERN Stack Application that met certain criteria. We decided to make an application that utilizes Adopt-A-Pet's API which allows you to search for adoptable pets within their database.
+
+## Application Preview
+Deployed Link: 
+
+videos will be here
 
 ## Getting Started and Installing Guide
 
@@ -16,6 +35,7 @@ If you want to use this project and add to it, these instructions will get you a
 8. Commit the files within git with: git commit -m "add your comment here"
 9. Push your files to your repository on GitHub with: git push origin main
 10. Begin your work.
+
 
 ## Prerequisites
 

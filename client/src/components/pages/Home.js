@@ -28,8 +28,9 @@ export default function Home() {
               onChange={event=>setPet(event.target.value)}
             /> */}
             <input
+              className="inputSearch"
               type="text"
-              placeholder="city"
+              placeholder="Enter a City"
               value= {city}
               onChange={event=>setCity(event.target.value)}
             />

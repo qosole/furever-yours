@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const { signToken } = require('../utils/auth')
+const jwt = require('jsonwebtoken')
 
 
 module.exports = {
@@ -72,7 +73,7 @@ module.exports = {
 
     async register(req, res) {
         // console.log(res.body)
-        const existingUser = await User.findOne({ email: req.body.email }).exec()
+        const existingUser = await User.findOne({ email: req.body.email });
 
         if (existingUser) {
             return res.status(204).json({ message: "User with this email already exists" })
@@ -81,6 +82,8 @@ module.exports = {
         try {
             const newUser = await User.create(req.body)
             console.log(newUser)
+            const { token, expiration } = signToken(newUser);
+            res.cookie('jwt', token, { httpOnly: true, maxAge: expiration * 1000 });
             res.status(200).json({ message: `${newUser} has been created` })
         } catch (error) {
             res.status(500).json(error)
@@ -107,7 +110,7 @@ module.exports = {
         
         if (correctPassword) {
             const { token, expiration } = signToken(userExists);
-
+            res.cookie('jwt', token, { httpOnly: true, maxAge: expiration * 1000 });
             return res.status(200).json({
                 message: "Password works",
                 token,

@@ -61,6 +61,8 @@ What things you need to install the software and how to install them.
 - [React](https://reactjs.org/docs/create-a-new-react-app.html)
 - [Adopt-A-Pet.com API](https://www.adoptapet.com/public/apis/pet_list.html)
 - [Paint.net](https://www.getpaint.net/)
+- [React-autocomplete-hint](https://www.npmjs.com/package/react-autocomplete-hint)
+- [Font Awesome](https://fontawesome.com/v5/docs/web/use-with/react)
 
 
 ## Seeing My Changes

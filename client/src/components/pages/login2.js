@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 // import { useMutation } from '@apollo/client';
 // import { Link } from 'react-router-dom';
 // import { LOGIN } from '../utils/mutations';
-// import Auth from '../utils/auth';
+import Auth from "../../utils/auth"
+
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -35,6 +36,8 @@ function Login(props) {
       [name]: value,
     });
   };
+
+  // if (Auth.loggedIn()) {
   return (
     <div className="container my-1">
       {/* <Link to="/signup">← Go to Signup</Link> */}
@@ -74,6 +77,10 @@ function Login(props) {
       </form>
     </div>
   );
-};
+  // }
+  // else {
+  //   return <Login />
+  // }
+}
 
 export default Login;

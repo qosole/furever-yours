@@ -30,7 +30,8 @@ export default function Home() {
 
   if (auth.loggedIn()) {
     return (
-      <div class="animate__animated animate__fadeInUp">
+
+      <div className="animate__animated animate__fadeInUp">
         <h1>Home</h1>
 
         <div className="searchform">
@@ -43,14 +44,14 @@ export default function Home() {
               onChange={event=>setPet(event.target.value)}
             /> */}
               <Hint options={options}>
-              <input
-                className="inputSearch"
-                data-list="montreal"
-                type="text"
-                placeholder="Enter a City"
-                value={city}
-                onChange={event => setCity(event.target.value.toLowerCase())}
-              />
+                <input
+                  className="inputSearch"
+                  data-list="montreal"
+                  type="text"
+                  placeholder="Enter a City"
+                  value={city}
+                  onChange={event => setCity(event.target.value.toLowerCase())}
+                />
               </Hint>
 
               <select
@@ -77,7 +78,7 @@ export default function Home() {
         <SearchBar pet={search.pet} city={search.city} />
       </div>
     )
-}
+  }
   else {
     return <Login />
   }

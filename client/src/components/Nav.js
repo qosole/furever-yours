@@ -1,9 +1,10 @@
 import React from 'react';
 import '../Style.css';
 import logo from "../../src/Furever-Yours-Logo.jpg";
+import AuthService from '../utils/auth';
 
 function Nav({ currentPage, handlePageChange }) {
-
+  const auth = new AuthService()
   return (
     <nav className="main-nav-menu">
         <img src={logo} alt="Logo" className="logo" />
@@ -27,15 +28,30 @@ function Nav({ currentPage, handlePageChange }) {
           Account
         </a>
       </li>
-      <li>
-        <a
-          href="#login"
-          onClick={() => handlePageChange('Login')}
-          className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
-        >
-          Login / Logout
-        </a>
-      </li>
+      {
+        !auth.loggedIn() ? (
+          <li>
+            <a
+              href="#login"
+              onClick={() => handlePageChange('Login')}
+              className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+            >
+              Login
+            </a>
+          </li> ) : (
+             <li>
+              <a
+                href="#login"
+            
+                className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+              >
+                Logout
+              </a>
+            </li>
+          )
+        
+      }
+     
       <li>
         <a
           href="#signup"

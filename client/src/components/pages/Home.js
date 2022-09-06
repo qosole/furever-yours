@@ -22,9 +22,9 @@ export default function Home() {
 
   }
 
-  // if (auth.loggedIn()) {
+  if (auth.loggedIn()) {
     return (
-      <div>
+      <div class="animate__animated animate__fadeInUp">
         <h1>Home</h1>
 
         <div className="searchform">
@@ -68,8 +68,8 @@ export default function Home() {
         <SearchBar pet={search.pet} city={search.city} />
       </div>
     )
-  // }
-  // else {
-  //   return <Login />
-  // }
+  }
+  else {
+    return <Login />
+  }
 }

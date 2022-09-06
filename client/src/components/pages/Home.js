@@ -40,6 +40,7 @@ export default function Home() {
             user ? `Welcome ${user.username}` : 'Home'
           }
         </h1>
+        
 
         <div className="searchform">
           <form id="form" className="form" >

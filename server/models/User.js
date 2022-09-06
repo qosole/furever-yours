@@ -1,4 +1,3 @@
-//requires mongoose for user model/schema
 const { Schema, model, Types } = require('mongoose');
 const bcrypt = require('bcryptjs');
 
@@ -77,7 +76,7 @@ const userSchema = new Schema(
             type: String,
             unique: true,
             required: true,
-            // email regex validator
+        
             validate: {
                 validator: function (email) {
                     return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email);
@@ -97,7 +96,7 @@ const userSchema = new Schema(
         },
         location: {
             type: String,
-            required: true
+            required: false
         }
 
     },
@@ -119,25 +118,19 @@ userSchema.pre('save', async function (next) {
     next();
 });
 
-// compare the incoming password with the hashed password
-// userSchema.methods.isCorrectPassword = async function (password) {
-//     return bcrypt.compare(password, this.password, );
-//   };
+
 
 userSchema.methods.isCorrectPassword = async function (password) {
     return await bcrypt.compare(password, this.password);
 };
 
 
-//call back f
-
-//initializes the user model
 const User = model('User', userSchema);
 
 module.exports = User;
 
 
-//zip code or city name for location?
+
 
 
 

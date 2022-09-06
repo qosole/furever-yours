@@ -26,9 +26,5 @@ router
 .delete(deleteUser)
 
 
-// router
-// .route('/pets/:userid')
-// .put(addPet)
-
 
 module.exports = router;

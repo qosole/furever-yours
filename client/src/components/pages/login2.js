@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-// import { useMutation } from '@apollo/client';
-// import { Link } from 'react-router-dom';
-// import { LOGIN } from '../utils/mutations';
-// import Auth from '../utils/auth';
+
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -17,10 +14,12 @@ function Login(props) {
       })
       const data = await response.json()
 
+      console.log('Data: ',data);
+
       localStorage.setItem("token", data.token)
       localStorage.setItem("expiration", data.expiration);
 
-      // window.location.reload();
+   
 
       console.log(data)
     } catch (e) {
@@ -62,11 +61,6 @@ function Login(props) {
             onChange={handleChange}
           />
         </div>
-        {/* {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
-          </div>
-        ) : null} */}
         <br></br>
         <div id="loginbtn" className="flex-row flex-end">
           <button type="submit">Login</button>

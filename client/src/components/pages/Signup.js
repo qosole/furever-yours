@@ -7,9 +7,8 @@ import { validateEmail } from '../../utils/helper';
 export default function Signup() {
 
   const [email, setEmail] = useState('');
-  const [userName, setUserName] = useState('');
+  const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const [location, setLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
@@ -21,12 +20,10 @@ export default function Signup() {
     // Based on the input type, we set the state of either email, username, and password
     if (inputType === 'email') {
       setEmail(inputValue);
-    } else if (inputType === 'userName') {
+    } else if (inputType === 'username') {
       setUserName(inputValue);
     } else if (inputType === 'password') {
       setPassword(inputValue);
-    } else {
-      setLocation(inputValue);
     }
   };
 
@@ -35,7 +32,7 @@ export default function Signup() {
     e.preventDefault();
 
     // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
-    if (!validateEmail(email) || !userName) {
+    if (!validateEmail(email) || !username) {
       setErrorMessage('Email or username is invalid');
       // We want to exit out of this code block if something is wrong so that the user can correct it
       return;
@@ -44,7 +41,7 @@ export default function Signup() {
     try {
       const response = await fetch("api/users/register", {
         method: "POST",
-        body: JSON.stringify({ email, userName, password, location }),
+        body: JSON.stringify({ email, username, password }),
         headers: { "content-type": "application/json" }
       })
       const data = await response.json()
@@ -63,7 +60,6 @@ export default function Signup() {
     setUserName('');
     setPassword('');
     setEmail('');
-    setLocation('');
 
   };
 
@@ -83,8 +79,8 @@ export default function Signup() {
         </div>
         <br></br>
         <input
-          value={userName}
-          name="userName"
+          value={username}
+          name="username"
           onChange={handleInputChange}
           type="text"
           placeholder="Username"
@@ -99,13 +95,6 @@ export default function Signup() {
             placeholder="Password"
           />
         </div>
-        <input
-          value={location}
-          name="location"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Location"
-        />
         <button type="button" onClick={handleFormSubmit}>Submit</button>
       </form>
       {errorMessage && (

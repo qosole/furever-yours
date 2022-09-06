@@ -1,6 +1,22 @@
 import React from 'react';
 import '../Style.css';
 import logo from "../../src/Furever-Yours-Logo.jpg";
+import AuthService from "../utils/auth";
+
+const auth = new AuthService();
+
+const logout = async () => {
+  const response = await fetch('/api/User/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+      document.location.replace('/login');
+  } else {
+      alert(response.statusText);
+  }
+};
 
 function Nav({ currentPage, handlePageChange }) {
 
@@ -27,15 +43,26 @@ function Nav({ currentPage, handlePageChange }) {
           Account
         </a>
       </li>
+      {auth.loggedIn() ? 
+      <li>
+        <a
+          href="#login"
+          onClick={logout}
+          className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+        >
+          Logout
+        </a>
+      </li>
+        : 
       <li>
         <a
           href="#login"
           onClick={() => handlePageChange('Login')}
           className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
         >
-          Login / Logout
+          Login
         </a>
-      </li>
+      </li>}
       <li>
         <a
           href="#signup"

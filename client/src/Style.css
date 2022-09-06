@@ -229,8 +229,8 @@ input {
   border-right: 3px solid grey;
   border-bottom: 2px solid rgb(99, 99, 99);
   padding: 20px;
-  
-  
+
+
 }
 
 .emailinput {
@@ -246,7 +246,6 @@ button {
   height: 50px;
   border-radius: 30px;
 }
-
 
 #emailbox {
   display: flex;
@@ -264,11 +263,11 @@ button {
 }
 
 #loginbtn button {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 20px;
   font-size: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -277,8 +276,8 @@ button {
   }
 
   .animalCard {
-    width: 46vw; 
-   }
+    width: 46vw;
+  }
 }
 
 @media screen and (max-width: 992px) {

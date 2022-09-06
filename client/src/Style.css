@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
 h1 {
   color: black;
   padding-left: 15px;
@@ -18,7 +20,7 @@ p {
   display: flex;
   height: 15vh;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: rgb(80, 111, 140);
   justify-content: right;
   align-items: center;
   z-index: 1;
@@ -59,7 +61,7 @@ footer {
 }
 
 .main-nav-items {
-  background-color: whitesmoke;
+  background-color: rgb(80, 111, 140);
   z-index: 2;
   float: right;
 }
@@ -84,6 +86,26 @@ ul li a:hover {
   padding: 3px;
   font-size: 27px;
 }
+
+
+.topBotomBordersIn a:before
+{
+    top: 0px;
+    transform: translateY(-10px);
+    border-top: solid;
+    border-top-color: aqua;
+}
+li.topBotomBordersIn a:after {
+  bottom: 0px;
+  transform: translateY(10px);
+}
+li.topBotomBordersIn a:hover:before, 
+li.topBotomBordersIn a:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 
 
 /* SEARCH BAR CSS */

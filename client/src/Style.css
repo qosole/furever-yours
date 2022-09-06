@@ -1,5 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
+/* * {
+  border: solid red 2px;
+} */
+
 h1 {
   color: black;
   padding-left: 15px;
@@ -198,6 +202,7 @@ input {
 }
 /* login page styling */
 .container {
+  height: min-content;
   width: auto;
   padding: 20px;
   margin: .5%;
@@ -227,16 +232,28 @@ button {
 #emailbox {
   display: flex;
   justify-content: space-between;
+  padding: 20px;
 }
 
 #passwordbox {
   display: flex;
   justify-content: space-between;
+  padding: 20px;
+}
+
+#usernamebox {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 #loginbtn {
   display: flex;
   justify-content: space-around;
+}
+
+.form {
+  display: block;
 }
 
 #loginbtn button {
@@ -247,7 +264,7 @@ button {
   padding-bottom: 40px;
 }
 /* signup styling starts here */
-.signupContainer {
+/* .signupContainer {
   width: auto;
   padding: 20px;
   margin: .5%;
@@ -258,7 +275,7 @@ button {
   border-bottom: 2px solid rgb(99, 99, 99);
   padding: 20px;
   margin-top: 100px;
-}
+} */
 
 /* styling applied for webpage responsiveness */
 @media screen and (max-width: 1200px) {

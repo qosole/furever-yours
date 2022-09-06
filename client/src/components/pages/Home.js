@@ -8,8 +8,6 @@ import 'animate.css';
 import AuthService from "../../utils/auth";
 import SearchBar from '../SearchBar';
 import Login from './login2';
-
-
 import { Hint } from 'react-autocomplete-hint';
 
 

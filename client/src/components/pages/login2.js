@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Auth from "../../utils/auth"
-
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -41,14 +38,12 @@ function Login(props) {
   // if (Auth.loggedIn()) {
   return (
     <div className="container my-1">
-      {/* <Link to="/signup">← Go to Signup</Link> */}
-
       <h2>Login</h2>
       <form onSubmit={handleFormSubmit}>
         <div id="emailbox" className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
+          <label htmlFor="email"></label>
           <input
-            placeholder="youremail@test.com"
+            placeholder="E-mail"
             name="email"
             type="email"
             id="email"
@@ -57,9 +52,9 @@ function Login(props) {
         </div>
         <br></br>
         <div id="passwordbox" className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
+          <label htmlFor="pwd"></label>
           <input
-            placeholder="******"
+            placeholder="Password"
             name="password"
             type="password"
             id="pwd"

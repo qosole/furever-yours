@@ -20,10 +20,11 @@ function Login(props) {
 
       localStorage.setItem("token", data.token)
       localStorage.setItem("expiration", data.expiration);
+      localStorage.setItem("user", JSON.stringify(data.user))
 
-      // window.location.reload();
 
       console.log(data)
+      window.location.reload();
     } catch (e) {
       console.log(e);
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import '../../Style.css';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,25 +14,32 @@ import { Hint } from 'react-autocomplete-hint';
 
 
 
+
 export default function Home() {
 
   const [pet, setPet] = useState('');
   const [city, setCity] = useState('');
   const [search, setSearch] = useState({ pet: "", city: "" });
+  const [user, setUser] = useState(null)
 
   const options = ["toms river", "new market", "montreal", "visalia", "st. louis", "new castle de"];
 
-  const auth = new AuthService();
+  const auth = useMemo(() => new AuthService(), [])
 
-  // const handleFormSubmit = () => {
+  useEffect(() => {
+    if (auth.loggedIn()) {
+      setUser(JSON.parse(localStorage.getItem("user")))
+    }
+  }, [auth])
 
-  // }
-
-  if (auth.loggedIn()) {
-    return (
-
+  return (
+    auth.loggedIn() ? (
       <div className="animate__animated animate__fadeInUp">
-        <h1>Home</h1>
+        <h1>
+          {
+            user ? `Welcome ${user.username}` : 'Home'
+          }
+        </h1>
 
         <div className="searchform">
           <form id="form" className="form" >
@@ -77,11 +84,9 @@ export default function Home() {
 
         <SearchBar pet={search.pet} city={search.city} />
       </div>
-    )
-  }
-  else {
-    return <Login />
-  }
+    ) : <Login />
+  )
+
 }
 
 

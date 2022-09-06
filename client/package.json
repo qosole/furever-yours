@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
 
-  "proxy": "http://localhost:3002/",
+  "proxy": "http://127.0.0.1:3001",
 
 
   "dependencies": {
@@ -17,7 +17,6 @@
     "awesomplete": "^1.1.5",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
-    "graphql": "^16.6.0",
     "react": "^18.2.0",
     "react-autocomplete-hint": "^2.0.0",
     "react-bootstrap": "^2.5.0",

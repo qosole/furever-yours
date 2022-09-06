@@ -3,6 +3,7 @@ import '../../Style.css';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import 'animate.css';
 
 import AuthService from "../../utils/auth";
 import SearchBar from '../SearchBar';
@@ -27,9 +28,9 @@ export default function Home() {
 
   // }
 
-  // if (auth.loggedIn()) {
+  if (auth.loggedIn()) {
     return (
-      <div>
+      <div class="animate__animated animate__fadeInUp">
         <h1>Home</h1>
 
         <div className="searchform">
@@ -77,9 +78,9 @@ export default function Home() {
       </div>
     )
 }
-//   else {
-//     return <Login />
-//   }
-// }
+  else {
+    return <Login />
+  }
+}
 
 

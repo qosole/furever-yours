@@ -31,7 +31,7 @@ export default function Signup() {
     // Preventing the form from refreshing on submit
     e.preventDefault();
 
-    // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
+    // Checking if email and username are valid
     if (!validateEmail(email) || !username) {
       setErrorMessage('Email or username is invalid');
       // We want to exit out of this code block if something is wrong so that the user can correct it
@@ -44,14 +44,14 @@ export default function Signup() {
         body: JSON.stringify({ email, username, password }),
         headers: { "content-type": "application/json" }
       })
-      const data = await response.json()
+      //const data = await response.json()
 
-      localStorage.setItem("token", data.token)
-      localStorage.setItem("expiration", data.expiration);
+      //localStorage.setItem("token", data.token)
+      //localStorage.setItem("expiration", data.expiration);
 
       // window.location.reload();
 
-      console.log(data)
+      //console.log(data)
     } catch (e) {
       console.log(e);
     }

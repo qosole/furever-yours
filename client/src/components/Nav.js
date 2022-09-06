@@ -5,6 +5,19 @@ import AuthService from "../utils/auth";
 
 const auth = new AuthService();
 
+const logout = async () => {
+  const response = await fetch('/api/User/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+      document.location.replace('/login');
+  } else {
+      alert(response.statusText);
+  }
+};
+
 function Nav({ currentPage, handlePageChange }) {
 
   return (
@@ -30,10 +43,11 @@ function Nav({ currentPage, handlePageChange }) {
           Account
         </a>
       </li>
-      {auth.loggedIn() ? <li>
+      {auth.loggedIn() ? 
+      <li>
         <a
           href="#login"
-          onClick={() => handlePageChange('Login')}
+          onClick={logout}
           className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
         >
           Logout

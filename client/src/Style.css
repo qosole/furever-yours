@@ -88,7 +88,8 @@ ul li a:hover {
 }
 
 
-.topBotomBordersIn a:before
+
+/* .topBotomBordersIn a:before
 {
     top: 0px;
     transform: translateY(-10px);
@@ -104,7 +105,7 @@ li.topBotomBordersIn a:hover:after
 {
     opacity: 1;
     transform: translateY(0px);
-}
+} */
 
 
 

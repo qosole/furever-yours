@@ -9,6 +9,7 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [location, setLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
@@ -22,12 +23,14 @@ export default function Signup() {
       setEmail(inputValue);
     } else if (inputType === 'userName') {
       setUserName(inputValue);
-    } else {
+    } else if (inputType === 'password') {
       setPassword(inputValue);
+    } else {
+      setLocation(inputValue);
     }
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     // Preventing the form from refreshing on submit
     e.preventDefault();
 
@@ -38,39 +41,70 @@ export default function Signup() {
       return;
     }
     
-    alert(`Hello ${userName}`);
+    try {
+      const response = await fetch("api/users/register", {
+        method: "POST",
+        body: JSON.stringify({ email, userName, password, location }),
+        headers: { "content-type": "application/json" }
+      })
+      const data = await response.json()
+
+      localStorage.setItem("token", data.token)
+      localStorage.setItem("expiration", data.expiration);
+
+      // window.location.reload();
+
+      console.log(data)
+    } catch (e) {
+      console.log(e);
+    }
 
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setUserName('');
     setPassword('');
     setEmail('');
+    setLocation('');
 
   };
 
   return (
     <div className="signupContainer">
       <p>Sign Up</p>
-      <form className="form">
-        <input
-          value={email}
-          name="email"
-          onChange={handleInputChange}
-          type="email"
-          placeholder="email"
-        />
+      <form className="form container my-1">
+        <div id="emailbox" className="flex-row space-between my-2">
+        <label htmlFor="email">Email address:</label>
+          <input
+            value={email}
+            name="email"
+            onChange={handleInputChange}
+            type="email"
+            placeholder="youremail@test.com"
+          />
+        </div>
+        <br></br>
         <input
           value={userName}
           name="userName"
           onChange={handleInputChange}
           type="text"
-          placeholder="username"
+          placeholder="Username"
         />
+        <div id="passwordbox" className="flex-row space-between my-2">
+          <label htmlFor="pwd">Password:</label>
+          <input
+            value={password}
+            name="password"
+            onChange={handleInputChange}
+            type="password"
+            placeholder="Password"
+          />
+        </div>
         <input
-          value={password}
-          name="password"
+          value={location}
+          name="location"
           onChange={handleInputChange}
-          type="password"
-          placeholder="Password"
+          type="text"
+          placeholder="Location"
         />
         <button type="button" onClick={handleFormSubmit}>Submit</button>
       </form>

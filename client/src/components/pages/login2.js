@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Auth from "../../utils/auth"
 
 
 function Login(props) {
@@ -34,6 +36,8 @@ function Login(props) {
       [name]: value,
     });
   };
+
+  // if (Auth.loggedIn()) {
   return (
     <div className="container my-1">
       {/* <Link to="/signup">← Go to Signup</Link> */}
@@ -68,6 +72,10 @@ function Login(props) {
       </form>
     </div>
   );
-};
+  // }
+  // else {
+  //   return <Login />
+  // }
+}
 
 export default Login;

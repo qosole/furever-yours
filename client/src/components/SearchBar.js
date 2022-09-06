@@ -24,7 +24,7 @@ function CommitSearch({ pet, city }) {
     if (!newData?.length) return <h1> No results found. Sorry. </h1>;
 
     return (
-        <div class="animate__animated animate__fadeIn">\
+        <div className="animate__animated animate__fadeIn">\
         <div className="animalSearchResults">
             {newData?.map(animal => {
                 return (<div className="animalCard">

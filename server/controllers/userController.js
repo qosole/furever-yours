@@ -80,8 +80,8 @@ module.exports = {
 
         try {
             const newUser = await User.create(req.body)
-            console.log(newuser)
-            res.status(200).json({ message: `${newuser} has been created` })
+            console.log(newUser)
+            res.status(200).json({ message: `${newUser} has been created` })
         } catch (error) {
             res.status(500).json(error)
         }

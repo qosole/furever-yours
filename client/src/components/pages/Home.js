@@ -24,10 +24,6 @@ export default function Home() {
 
   const auth = new AuthService();
 
-  // const handleFormSubmit = () => {
-
-  // }
-
   if (auth.loggedIn()) {
     return (
 

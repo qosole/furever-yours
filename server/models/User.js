@@ -1,67 +1,7 @@
 const { Schema, model, Types } = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-const petsSchema = new Schema(
-    {
-        petId: {
-            type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId(),
-        },
-        apiId: {
-            type: Number,
-            required: true
-        },
-        species: {
-            type: String
-        },
-        breed: {
-            type: String
-        },
-        name: {
-            type: String
-        },
-        age: {
-            type: String
-        },
-        sex: {
-            type: String
-        },
-        color: {
-            type: String
-        },
-        location: {
-            type: String
-        },
-        city: {
-            type: String
-        },
-        state: {
-            type: String
-        },
-        pros: {
-            type: String,
-            required: true,
-            max: 300,
-        },
-        cons: {
-            type: String,
-            required: true,
-            max: 300,
-        },
-        addedAt: {
-            type: Date,
-            default: Date.now,
-            get: (timestamp) => new Date(timestamp).toLocaleString()
-        },
-    },
-    {
-        toJSON: {
-            getters: true,
-            virtuals: true,
-        },
-        id: false
-    }
-);
+
 
 
 const userSchema = new Schema(
@@ -84,15 +24,10 @@ const userSchema = new Schema(
                 message: `Please enter a valid email address`
             }
         },
-
-        pets: [petsSchema],
-
         password: {
             type: String,
             required: true,
             minlength: 5,
-
-
         },
         location: {
             type: String,

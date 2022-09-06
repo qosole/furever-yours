@@ -42,7 +42,10 @@ function Nav({ currentPage, handlePageChange }) {
              <li>
               <a
                 href="#login"
-            
+                onClick={ () => {
+                  localStorage.clear();
+                  window.location.reload(); 
+                }}
                 className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
               >
                 Logout

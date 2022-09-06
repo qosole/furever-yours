@@ -28,7 +28,7 @@ export default function Home() {
 
   // }
 
-  // if (auth.loggedIn()) {
+  if (auth.loggedIn()) {
     return (
       <div class="animate__animated animate__fadeInUp">
         <h1>Home</h1>
@@ -78,9 +78,9 @@ export default function Home() {
       </div>
     )
 }
-//   else {
-//     return <Login />
-//   }
-// }
+  else {
+    return <Login />
+  }
+}
 
 

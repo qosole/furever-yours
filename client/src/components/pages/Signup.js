@@ -48,7 +48,7 @@ export default function Signup() {
   };
 
   return (
-    <div>
+    <div className="signupContainer">
       <p>Sign Up</p>
       <form className="form">
         <input

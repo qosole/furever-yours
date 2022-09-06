@@ -95,10 +95,10 @@ module.exports = {
     },
 
     async login(req, res) {
-        console.log('imhere')
+       
         const userExists = await User.findOne({ email: req.body.email }).exec()
-
-        const correctPassword = await userExists.isCorrectPassword(req.body.password);
+        console.log(userExists)
+        const correctPassword = await userExists?.isCorrectPassword(req.body.password);
         
         if (correctPassword) {
             const { token, expiration } = signToken(userExists);

@@ -9,7 +9,7 @@ function Nav({ currentPage, handlePageChange }) {
         <img src={logo} alt="Logo" className="logo" />
     <section className="main-nav-items">
     <ul>
-      <li>
+      <li className="topBotomBordersIn">
         <a
           href="#home"
           onClick={() => handlePageChange('Home')}

@@ -95,8 +95,11 @@ module.exports = {
     },
 
     async login(req, res) {
-       
-        const userExists = await User.findOne({ email: req.body.email }).exec()
+        
+        const userExists = await User.findOne({ email: req.body.email })
+
+        console.log('Data: ',req.body.email);
+        console.log('Data: ',userExists);
 
         console.log(userExists)
         const correctPassword = await userExists?.isCorrectPassword(req.body.password);

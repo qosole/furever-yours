@@ -6,7 +6,7 @@ import AuthService from "../utils/auth";
 const auth = new AuthService();
 
 const logout = async () => {
-  const response = await fetch('/api/User/logout', {
+  const response = await fetch('/api/users/logout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
   });

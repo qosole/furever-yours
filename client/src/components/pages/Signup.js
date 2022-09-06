@@ -72,14 +72,16 @@ export default function Signup() {
       <p>Sign Up</p>
       <form className="form container my-1">
         <div id="emailbox" className="flex-row space-between my-2">
+        <label htmlFor="email">Email address:</label>
           <input
             value={email}
             name="email"
             onChange={handleInputChange}
             type="email"
-            placeholder="Email@example.com"
+            placeholder="youremail@test.com"
           />
         </div>
+        <br></br>
         <input
           value={userName}
           name="userName"
@@ -87,13 +89,16 @@ export default function Signup() {
           type="text"
           placeholder="Username"
         />
-        <input
-          value={password}
-          name="password"
-          onChange={handleInputChange}
-          type="password"
-          placeholder="Password"
-        />
+        <div id="passwordbox" className="flex-row space-between my-2">
+          <label htmlFor="pwd">Password:</label>
+          <input
+            value={password}
+            name="password"
+            onChange={handleInputChange}
+            type="password"
+            placeholder="Password"
+          />
+        </div>
         <input
           value={location}
           name="location"

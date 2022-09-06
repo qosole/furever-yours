@@ -44,12 +44,7 @@ export default function Home() {
         <div className="searchform">
           <form id="form" className="form" >
             <div className="field">
-              {/* <input
-              type="text"
-              placeholder="search for a pet"
-              value= {pet}
-              onChange={event=>setPet(event.target.value)}
-            /> */}
+            
               <Hint options={options}>
                 <input
                   className="inputSearch"

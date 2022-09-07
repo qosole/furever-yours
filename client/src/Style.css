@@ -369,3 +369,21 @@ button {
 
 
 }
+
+/* account css */
+.account-container {
+  background-color: aliceblue;
+  padding: 40px;
+  font-size: 30px;
+}
+
+.pet-box {
+  font-size: 25px;
+  text-align: center;
+}
+
+.savePet {
+  margin: 4px;
+  font-size: medium;
+  width: 100px;
+}

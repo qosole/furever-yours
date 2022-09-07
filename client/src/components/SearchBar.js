@@ -3,9 +3,8 @@ import axios from "axios";
 import useFetch from './fetchRequest';
 import '../Style.css';
 
-
-function CommitSearch({ pet, city, savePet }) {
-    const { data, loading, error } = useFetch("https://api.adoptapet.me/ap");
+function CommitSearch({ pet, city }) {
+    const { data, loading, error } = useFetch("t");
 
     if (loading) return <h1> LOADING...</h1>;
 
@@ -23,14 +22,13 @@ function CommitSearch({ pet, city, savePet }) {
     })
 
     if (!newData?.length) return <h1> No results found. Sorry. </h1>;
-    
-   
+
     return (
-        <div className="animate__animated animate__fadeIn">\
+        <div className="animate__animated animate__fadeIn">
         <div className="animalSearchResults">
-            {newData?.map((animal, i) => {
-                return (<div className="animalCard" key={i}>
-                    <img className="animalImage" src={animal.pic_url} alt="animal"/>
+            {newData?.map(animal => {
+                return (<div className="animalCard">
+                    <img className="animalImage" src={animal.pic_url} />
                     <p>Species: {animal.species_breed.species_name}</p>
                     <p>Breed: {animal.species_breed.breed_name}</p>
                     <p>Name: {animal.name}</p>
@@ -40,13 +38,6 @@ function CommitSearch({ pet, city, savePet }) {
                     <p>Location: {animal.center.name}</p>
                     <p>City: {animal.center.city}</p>
                     <p>State: {animal.center.state}</p>
-                    <button className="savePet"
-                     onClick={event => {
-                        event.preventDefault()
-                        savePet(animal)
-                      }}
-                    > Save Pet ❤️
-                    </button>
                 </div>)
             })
 
@@ -54,6 +45,22 @@ function CommitSearch({ pet, city, savePet }) {
 
         </div>
 
+        // <div className="animalSearchResults">
+        //     {/* {console.log(data)} */}
+        //     <div className="animalCard">
+        //         <img className="animalImage" src={data?.page[0].pic_url} />
+        //         <p>Species: {data?.page[0].species_breed.species_name}</p>
+        //         <p>Breed: {data?.page[0].species_breed.breed_name}</p>
+        //         <p>Name: {data?.page[0].name}</p>
+        //         <p>Age: {data?.page[0].age}</p>
+        //         <p>Sex: {data?.page[0].sex}</p>
+        //         <p>Color: {data?.page[0].color}</p>
+        //         <p>Location: {data?.page[0].center.name}</p>
+        //         <p>City: {data?.page[0].center.city}</p>
+        //         <p>State: {data?.page[0].center.state}</p>
+        //     {/* <p>Description: {data?.page[0].desc}</p> */}
+        //     </div>
+        // </div>
         </div>
     )
 }

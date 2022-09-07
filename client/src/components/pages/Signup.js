@@ -44,14 +44,27 @@ export default function Signup() {
         body: JSON.stringify({ email, username, password }),
         headers: { "content-type": "application/json" }
       })
+    } catch (e) {
+      console.log(e);
+    }
+
+    try {
+      const response = await fetch("api/users/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: { "content-type": "application/json" }
+      })
       const data = await response.json()
+
+      console.log('Data: ',data);
 
       localStorage.setItem("token", data.token)
       localStorage.setItem("expiration", data.expiration);
+      localStorage.setItem("user", JSON.stringify(data.user))
 
-      window.location.reload();
 
       console.log(data)
+      window.location.reload();
     } catch (e) {
       console.log(e);
     }

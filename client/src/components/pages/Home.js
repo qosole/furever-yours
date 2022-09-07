@@ -37,10 +37,8 @@ const savedPets = []
 function savePet(animal) {
     //search through local storage to see if the pet already exists in save pets 
     //localstorage.getitem and check if it exists already 
-    // localStorage.setItem("savedPets", JSON.stringify(savedPets))
     savedPets.push(animal)
     localStorage.setItem("savedPets", JSON.stringify(savedPets))
-    // localStorage.setItem(animal.name, JSON.stringify(animal))
 }
 
   return (

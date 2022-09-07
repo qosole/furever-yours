@@ -32,6 +32,17 @@ export default function Home() {
     }
   }, [auth])
 
+const savedPets = []
+
+function savePet(animal) {
+    //search through local storage to see if the pet already exists in save pets 
+    //localstorage.getitem and check if it exists already 
+    // localStorage.setItem("savedPets", JSON.stringify(savedPets))
+    savedPets.push(animal)
+    localStorage.setItem("savedPets", JSON.stringify(savedPets))
+    // localStorage.setItem(animal.name, JSON.stringify(animal))
+}
+
   return (
     auth.loggedIn() ? (
       <div className="animate__animated animate__fadeInUp">
@@ -78,7 +89,7 @@ export default function Home() {
           </form>
         </div>
 
-        <SearchBar pet={search.pet} city={search.city} />
+        <SearchBar pet={search.pet} city={search.city} savePet={savePet}/>
       </div>
     ) : <Login />
   )

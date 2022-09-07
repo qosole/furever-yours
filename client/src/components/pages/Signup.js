@@ -44,14 +44,14 @@ export default function Signup() {
         body: JSON.stringify({ email, username, password }),
         headers: { "content-type": "application/json" }
       })
-      //const data = await response.json()
+      const data = await response.json()
 
-      //localStorage.setItem("token", data.token)
-      //localStorage.setItem("expiration", data.expiration);
+      localStorage.setItem("token", data.token)
+      localStorage.setItem("expiration", data.expiration);
 
-      // window.location.reload();
+      window.location.reload();
 
-      //console.log(data)
+      console.log(data)
     } catch (e) {
       console.log(e);
     }
@@ -64,11 +64,11 @@ export default function Signup() {
   };
 
   return (
-    <div className="signupContainer">
-      <p>Sign Up</p>
-      <form className="form container my-1">
+    <div className="container my-1">
+      <h2>Sign Up</h2>
+      <form>
         <div id="emailbox" className="flex-row space-between my-2">
-        <label htmlFor="email">Email address:</label>
+        <label htmlFor="email"></label>
           <input
             value={email}
             name="email"
@@ -78,6 +78,8 @@ export default function Signup() {
           />
         </div>
         <br></br>
+        <div id="usernamebox" className="flex-row space-between my-2">
+        <label htmlFor="username"></label>
         <input
           value={username}
           name="username"
@@ -85,8 +87,9 @@ export default function Signup() {
           type="text"
           placeholder="Username"
         />
+        </div>
         <div id="passwordbox" className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
+          <label htmlFor="pwd"></label>
           <input
             value={password}
             name="password"
@@ -95,13 +98,16 @@ export default function Signup() {
             placeholder="Password"
           />
         </div>
-        <button type="button" onClick={handleFormSubmit}>Submit</button>
-      </form>
+        <div id="submitbtn" className="flex-row flex-end">
+          <button type="button" onClick={handleFormSubmit}>Submit</button>
+        </div>
+     
       {errorMessage && (
         <div>
           <p className="error-text">{errorMessage}</p>
         </div>
       )}
+      </form>
     </div>
   );
 }

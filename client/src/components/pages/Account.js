@@ -41,7 +41,7 @@ export default function Account() {
 
 return (
     auth.loggedIn() ? (
-      <div>
+      <div className="animate__animated animate__fadeIn">
         <h1>Account Information</h1>
           <div className="account-container">
           <p>

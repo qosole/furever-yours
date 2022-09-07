@@ -305,6 +305,10 @@ button {
     text-align: center;
     padding-right: 0px;
   }
+  
+  .container {    
+     width: 80%;   
+  }
 
   .logo {
     height: 100px;

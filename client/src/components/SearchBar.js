@@ -26,7 +26,7 @@ function CommitSearch({ pet, city, savePet }) {
     
    
     return (
-        <div className="animate__animated animate__fadeIn">\
+        <div className="animate__animated animate__fadeIn">
         <div className="animalSearchResults">
             {newData?.map((animal, i) => {
                 return (<div className="animalCard" key={i}>

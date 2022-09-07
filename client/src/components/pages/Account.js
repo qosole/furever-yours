@@ -31,14 +31,6 @@ export default function Account() {
 
   }, []);
   
-
-//   function displayPet() {
-    
-//     const savedPet = JSON.parse(localStorage.getItem("savedPets"));
-//     console.log(savedPet) 
-// }
-
-
 return (
     auth.loggedIn() ? (
       <div >
